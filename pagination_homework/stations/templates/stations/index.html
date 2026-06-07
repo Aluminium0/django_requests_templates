@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Bus stations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 24px auto;
+            max-width: 960px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #ddd;
+            padding: 14px 8px;
+            text-align: left;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 4px;
+            margin-top: 24px;
+        }
+
+        .pagination a,
+        .pagination span {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #111;
+            min-width: 44px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .pagination a {
+            background: #31bde8;
+            border-color: #31bde8;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Street</th>
+                <th>District</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for station in bus_stations %}
+                <tr>
+                    <td>{{ station.Name }}</td>
+                    <td>{{ station.Street }}</td>
+                    <td>{{ station.District }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}">←</a>
+        {% endif %}
+
+        <span>{{ page.number }}</span>
+
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}">→</a>
+        {% endif %}
+    </div>
+</body>
+</html>
