@@ -2,6 +2,12 @@
 
 Recipe calculator homework for Django.
 
+## Homework folders
+
+- [Recipe calculator](https://github.com/Aluminium0/django_requests_templates)
+- [Pagination homework](https://github.com/Aluminium0/django_requests_templates/tree/main/pagination_homework)
+- [Phone catalog homework](https://github.com/Aluminium0/django_requests_templates/tree/main/phones_catalog_homework)
+
 ## Run
 
 ```bash
