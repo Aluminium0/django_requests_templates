@@ -2,6 +2,10 @@
 
 Standalone homework for importing a phone catalog from CSV into a Django database.
 
+GitHub folder:
+
+https://github.com/Aluminium0/django_requests_templates/tree/main/phones_catalog_homework
+
 ## Run
 
 ```bash
