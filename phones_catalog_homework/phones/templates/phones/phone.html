@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{{ phone.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 24px;
+        }
+
+        img {
+            display: block;
+            max-height: 520px;
+            max-width: 360px;
+            object-fit: contain;
+        }
+
+        dt {
+            font-weight: 700;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="{% url 'catalog' %}">← назад в каталог</a></p>
+    <h1>{{ phone.name }}</h1>
+    <img src="{{ phone.image }}" alt="{{ phone.name }}">
+
+    <dl>
+        <dt>Стоимость</dt>
+        <dd>{{ phone.price|floatformat:1 }} ₽</dd>
+
+        <dt>Дата выхода</dt>
+        <dd>{{ phone.release_date }}</dd>
+
+        <dt>LTE</dt>
+        <dd>{% if phone.lte_exists %}есть{% else %}нет{% endif %}</dd>
+    </dl>
+</body>
+</html>
